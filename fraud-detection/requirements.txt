@@ -6,3 +6,4 @@ imbalanced-learn
 matplotlib
 seaborn
 joblib
+plotly
