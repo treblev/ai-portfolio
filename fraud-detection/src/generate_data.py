@@ -88,7 +88,7 @@ def _legit_session(user: pd.Series) -> dict:
         1e-5, user["typical_withdrawal_btc"] * 5
     ))
     days_since_login = float(RNG.exponential(user["avg_days_between_logins"]))
-    session_to_withdrawal_secs = int(RNG.lognormal(mean=7.5, sigma=1.2))  # ~1800s median
+    session_to_withdrawal_secs = int(RNG.lognormal(mean=7.5, sigma=2.0))  # ~1800s median
 
     return {
         "is_new_device":               int(RNG.random() < 0.05),   # occasional new device
@@ -122,7 +122,7 @@ def _ato_session(user: pd.Series) -> dict:
     days_since_login = float(RNG.uniform(14, 120))
 
     # Attacker moves fast — straight to withdrawal, no browsing
-    session_to_withdrawal_secs = int(RNG.lognormal(mean=4.0, sigma=0.8))  # ~55s median
+    session_to_withdrawal_secs = int(RNG.lognormal(mean=6.6, sigma=1.5))  # ~55s median
 
     return {
         "is_new_device":               int(RNG.random() < 0.92),   # almost always new device
