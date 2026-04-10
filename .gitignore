@@ -1,0 +1,11 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Also ignore nested virtual environments
+**/.venv/
+**/venv/
+**/env/
+fraud-detection/data/
+fraud-detection/models/
